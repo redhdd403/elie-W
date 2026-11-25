@@ -1,0 +1,23 @@
+[package]
+name = "raaaaah-weeee"
+version = "0.1.0"
+edition = "2021"
+description = "raaaaah weeee"
+
+[dependencies]
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_Media_Multimedia",
+    "Win32_System_LibraryLoader",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+panic = "abort"
